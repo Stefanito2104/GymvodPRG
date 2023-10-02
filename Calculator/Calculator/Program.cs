@@ -54,6 +54,7 @@ namespace Calculator
                 }
                 else if (operace == "^")
                 {
+                    Console.WriteLine("Na kolikátou chceš umocnit?");
                     double mocnina = Convert.ToDouble(Console.ReadLine());
                     vysledek = Math.Pow(num1, mocnina);
                     num1 = vysledek;
@@ -61,6 +62,7 @@ namespace Calculator
                 }
                 else if (operace == "odmocnina")
                 {
+                    Console.WriteLine("Kolikátou odmocninu chceš použít?");
                     double odmocnina = Convert.ToDouble(Console.ReadLine());
                     vysledek = Math.Pow(num1, 1/odmocnina);
                     num1 = vysledek;
