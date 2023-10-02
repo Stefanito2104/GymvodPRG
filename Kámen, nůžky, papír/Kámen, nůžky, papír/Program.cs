@@ -17,12 +17,12 @@ namespace Kámen__nůžky__papír
             int material;
             material = Convert.ToInt32(Console.ReadLine());
             pc = rnd.Next(1, 3);
-            while ((material > 1) || (material < 3))    
+            while (material > 1 || material < 3)    
                 if (material == pc)
                 {
                     Console.WriteLine("Nikdo nevyhrává");
                 }
-                else if ((material == 1) && (pc == 2))
+                else if (material == 1 && pc == 2)
                 {
                     Console.WriteLine("Vyhráváš, kámen porazí nůžky");
                 }
