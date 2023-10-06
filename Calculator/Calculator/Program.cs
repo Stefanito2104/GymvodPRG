@@ -15,7 +15,7 @@ namespace Calculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Dostupné operace:+,-,*,/,^,odmocnina");
+            Console.WriteLine("Dostupné operace: +, -, *, /, ^, odmocnina (piš  odm)");
             double num1 = Convert.ToDouble(Console.ReadLine());
             double vysledek = 0;
             string makej = null;
@@ -62,7 +62,7 @@ namespace Calculator
                     Console.WriteLine("=" + vysledek);
                     continue;
                 }
-                else if (operace == "odmocnina")
+                else if (operace == "odm")
                 {
                     Console.WriteLine("Kolikátou odmocninu chceš použít?");
                     double odmocnina = Convert.ToDouble(Console.ReadLine());
