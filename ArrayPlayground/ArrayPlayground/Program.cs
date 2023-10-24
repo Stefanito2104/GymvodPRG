@@ -60,7 +60,6 @@ namespace ArrayPlayground
 
             //TODO 7: Vyhledej v poli číslo, které zadá uživatel, a vypiš index nalezeného prvku do konzole.
             Console.WriteLine("\nVyhledávání čísla:");
-            int index;
             int num = int.Parse(Console.ReadLine());
             bool found = false;
             for (int i = 0; i < myArray.Length; i++) 
