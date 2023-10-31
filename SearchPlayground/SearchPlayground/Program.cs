@@ -40,15 +40,47 @@ namespace SearchPlayground
              * Až ti bude binary search fungovat, přidej k němu proměnnou, která ti bude počítat, kolikrát jsi musel rozdělit interval, než jsi prvek našel
              * a před returnem ho vypiš uživateli do konzole.
              */
-            int id = 0;
-            int ih = array.Length-1;
+            int intervalDivisionCount = 0;
+            int left = 0;
+            int right = array.Length - 1;
+            while (left<=right)
+            {
+                intervalDivisionCount++;
+                int mid = (left + right) / 2;
+                if (array[mid] == elementToSearch)
+                {
+                    Console.WriteLine("     (Binární dělení dělilo interval " + intervalDivisionCount + " krát.)");
+                    return mid;
+                }
+                if (array[mid] < elementToSearch)
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    right = mid - 1;
+                }
+            }
             return -1;
         }
 
         static int BinarySearchRecursive(int[] array, int elementToSearch, int lower, int upper)
         {
             //TODO naimplementuj binární vyhledávání rekurzivním způsobem (Zamysli se nad parametry, které tato funkce přijímá vzpomeň si na přístup Rozděl a Panuj.)
-            return -1;
+            if (lower > upper)
+            {
+                return -1;
+            }
+            int mid = lower + (upper - lower) / 2;
+            if (array[mid] == elementToSearch)
+            {
+                return mid;
+            }
+            if (array[mid] < elementToSearch)
+            {
+                return BinarySearchRecursive(array, elementToSearch, mid + 1, upper);
+            }
+            return BinarySearchRecursive(array, elementToSearch, lower, mid - 1);
         }
 
         //Naplní pole náhodnými rostoucími čísly.
