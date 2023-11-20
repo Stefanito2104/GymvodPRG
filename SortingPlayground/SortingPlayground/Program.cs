@@ -119,6 +119,9 @@ namespace SortingPlayground
             WriteArrayToConsole(mediumArray, "Střední pole");
             SortArray(mediumArray, "Střední pole");
 
+            WriteArrayToConsole(largeArray, "Velké pole");
+            SortArray(largeArray, "Velké pole");
+
             //WriteArrayToConsole(largeArray, "Velké pole");
             //SortArray(largeArray, "Velké pole");
 
