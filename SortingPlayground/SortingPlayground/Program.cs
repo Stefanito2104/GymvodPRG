@@ -41,12 +41,34 @@ namespace SortingPlayground
             return sortedArray;
         }
 
-        static int[] SelectionSort(int[] array)
+        static int[] SelectionSort(int[] array, int indexi)
         {
             int[] sortedArray = (int[])array.Clone(); // Řaď v tomto poli, ve kterém je výchoze zkopírováno všechno ze vstupního pole.
             /*
              * TODO: Naimplementuj selection sort.
              */
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (i == array.Length)
+                {
+                    break;
+                }
+                int j;
+                for (j = i; j < array.Length; j++)
+                {
+                    indexi = int.MaxValue;
+                    if (j + 1 == array.Length)
+                    {
+                        break;
+                    }
+                    if (sortedArray[j] < indexi)
+                    {
+                        indexi = sortedArray[j];
+                    }
+                    sortedArray[i] = sortedArray[j];
+                    sortedArray[j] = indexi;
+                }
+            }
             return sortedArray;
         }
 
