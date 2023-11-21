@@ -184,16 +184,16 @@ namespace Maticové_operace___Stanivuković
             }
             Console.Write("\n");
             int[,] array3 = new int[a, c];
-            for (int i = 0; i < array2.GetLength(1); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array.GetLength(0); j++)
+                for (int j = 0; j < array2.GetLength(1); j++)
                 {
                     int index = 0;
                     for (int k = 0; k < array.GetLength(1); k++)
                     {
-                        index = index + array[j, k] * array2[k, i];
+                        index = index + array[i, k] * array2[k, j];
                     }
-                    array3[j, i] = index;
+                    array3[i, j] = index;
                 }
             }
             Console.WriteLine("Výsledná matice");
