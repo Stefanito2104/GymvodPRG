@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,33 +42,25 @@ namespace SortingPlayground
             return sortedArray;
         }
 
-        static int[] SelectionSort(int[] array, int indexi)
+        static int[] SelectionSort(int[] array)
         {
             int[] sortedArray = (int[])array.Clone(); // Řaď v tomto poli, ve kterém je výchoze zkopírováno všechno ze vstupního pole.
             /*
              * TODO: Naimplementuj selection sort.
              */
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length-1; i++)
             {
-                if (i == array.Length)
+                int index = i;
+                for (int j = i; j < array.Length; j++)
                 {
-                    break;
-                }
-                int j;
-                for (j = i; j < array.Length; j++)
-                {
-                    indexi = int.MaxValue;
-                    if (j + 1 == array.Length)
+                    if (sortedArray[j] < sortedArray[index])
                     {
-                        break;
+                        index = j;
                     }
-                    if (sortedArray[j] < indexi)
-                    {
-                        indexi = sortedArray[j];
-                    }
-                    sortedArray[i] = sortedArray[j];
-                    sortedArray[j] = indexi;
                 }
+                int temp = sortedArray[index];
+                sortedArray[index] = sortedArray[i];
+                sortedArray[i] = temp;
             }
             return sortedArray;
         }
@@ -78,6 +71,17 @@ namespace SortingPlayground
             /*
              * TODO: Naimplementuj insertion sort.
              */
+            for (int i = 0; i < array.Length; i++)
+            {
+                int key = sortedArray[i];
+                int j = i - 1;
+                while (j >= 0 && sortedArray[j] > key)
+                {
+                    sortedArray[j + 1] = sortedArray[j];
+                    j--;
+                }
+                sortedArray[j + 1] = key;
+            }
             return sortedArray;
         }
 
