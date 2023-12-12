@@ -39,8 +39,10 @@ namespace ClassPlayground
         }
         public void ContainsPoint()
         {
-            double pointX = Convert.ToDouble(Console.ReadLine());
-            double pointY = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Napiš polohu bodu:\nx = ");
+            double pointX = Double.Parse(Console.ReadLine());
+            Console.Write("y = ");
+            double pointY = Double.Parse(Console.ReadLine());
             if (width >= 0)
             {
                 if (height >= 0)

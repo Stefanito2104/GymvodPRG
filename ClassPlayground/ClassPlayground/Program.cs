@@ -26,7 +26,7 @@ using System.Threading.Tasks;
  *                                            - holderName jako jméno osoby, které účet patří
  *                                            - currency jako měna, ve které je účet vedený
  *                                            - balance jako zůstatek na účtu
- *    Přidej třídě BankAccount čtyři funkce - Deposit, která jako vstupní parametr přijme množství peněz a vloží je na účet
+ *    Přidej třídě BankAccount tři funkce - Deposit, která jako vstupní parametr přijme množství peněz a vloží je na účet
  *                                          - Withdraw, která jako vstupní parametr přijme množství peněz a z účtu "vybere" peníze, tedy sníží zůstatek a navrátí požadované množství
  *                                                      Pokud na účtu není dostatek peněz, uživatele upozorní a vrátí nulu.
  *                                          - Transfer, která jako vstupní parametry přijme množství peněz a číslo účtu, na které se budou peníze posílat, a převede peníze
@@ -66,10 +66,13 @@ namespace ClassPlayground
     {
         static void Main(string[] args)
         {
-            Rectangle rect = new Rectangle(5, 4, 1, 0);
+            Rectangle rect = new Rectangle(8, 10, 9, 7);
             rect.CalculateArea();
             rect.CalculateAspectRatio();
             rect.ContainsPoint();
+            Random rnd = new Random();
+            long account = rnd.Next(100000000, 10000000000);
+            BankAccount account1 = new BankAccount();
             Console.ReadKey();
         }
     }
