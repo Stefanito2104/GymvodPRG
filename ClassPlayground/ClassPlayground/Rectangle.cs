@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +9,13 @@ namespace ClassPlayground
     internal class Rectangle
     {
         public double width, height, x, y;
-        public Rectangle(double width, double height, double x, double y) 
+        public Rectangle(double width, double height, double x, double y)
         {
             this.width = width;
             this.height = height;
             this.x = x;
             this.y = y;
-        }        
+        }
         public void CalculateArea()
         {
             double area = Math.Abs(width * height);
@@ -33,7 +32,7 @@ namespace ClassPlayground
             {
                 Console.WriteLine("Obdélník je vysoký");
             }
-            else if (ratio == 1) 
+            else if (ratio == 1)
             {
                 Console.WriteLine("Je to čtverec");
             }
