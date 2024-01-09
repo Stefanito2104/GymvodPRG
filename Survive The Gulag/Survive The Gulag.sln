@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Survive The Gulag", "Survive The Gulag\Survive The Gulag.csproj", "{2308A6CD-2319-4CDC-9DB3-3E3233119E6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2308A6CD-2319-4CDC-9DB3-3E3233119E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2308A6CD-2319-4CDC-9DB3-3E3233119E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2308A6CD-2319-4CDC-9DB3-3E3233119E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2308A6CD-2319-4CDC-9DB3-3E3233119E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0093FE29-FADB-43E4-82BA-7BF12914D962}
+	EndGlobalSection
+EndGlobal
