@@ -10,76 +10,34 @@ namespace Survive_The_Gulag
     internal class Enemy
     {
         public int enemyHealth, yourHealth;
-        public Enemy(int enemyHealth, int yourHealth) 
+        public string id;
+        public Enemy(int enemyHealth, int yourHealth, string id) 
         {
             this.enemyHealth = enemyHealth;
             this.yourHealth = yourHealth;
-        }
-        public void SetHealth(int yourHealth)
-        {
-            this.yourHealth = yourHealth;
+            this.id = id;
         }
         public void Fight()
         {
             Random rnd = new Random();
-            int exclamation = rnd.Next(1, 6);
-            if (exclamation == 1) 
+            while (yourHealth > 0 && enemyHealth > 0)
             {
-                Console.WriteLine("Enemy: Now you've done it!");
-            }
-            else if (exclamation == 2)
-            {
-                Console.WriteLine("Enemy: You wanna get you ass beat?");
-            }
-            else if (exclamation == 3)
-            {
-                Console.WriteLine("Enemy: You're asking for it!");
-            }
-            else if (exclamation == 4)
-            {
-                Console.WriteLine("Enemy: I'll kill you!");
-            }
-            else
-            {
-                Console.WriteLine("Enemy: Fuck you!");
-            }
-            Console.WriteLine("Everyone: Ayo, a fight!");
-            while (enemyHealth > 0 && yourHealth > 0)
-            {
-                int avoidChance = rnd.Next(1, 4);
-                if (avoidChance == 1) 
-                {
-                    Console.WriteLine("Miss!");
-                }
-                else
-                {
-                    int criticalChance = rnd.Next(1, 6);
-                    if (criticalChance == 1) 
-                    {
-                        Console.WriteLine("Critical Hit!");
-                        enemyHealth = enemyHealth-10;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Hit!");
-                        enemyHealth = enemyHealth-5;
-                    }
-                }
-                Console.WriteLine(enemyHealth);
-                Console.ReadKey();
                 if (enemyHealth > 0)
                 {
-                    avoidChance = rnd.Next(1, 4);
+                    Console.ReadKey();
+                    Console.WriteLine(id + " throws a punch!");
+                    Console.ReadKey();
+                    int avoidChance = rnd.Next(1, 4);
                     if (avoidChance == 1)
                     {
                         Console.WriteLine("Miss!");
                     }
                     else
                     {
-                        int criticalChance1 = rnd.Next(1, 6);
-                        if (criticalChance1 == 1)
+                        int criticalChance = rnd.Next(1, 6);
+                        if (criticalChance == 1)
                         {
-                            Console.WriteLine("Critical Hit!");
+                            Console.WriteLine("Critical hit!");
                             yourHealth = yourHealth - 10;
                         }
                         else
@@ -93,18 +51,42 @@ namespace Survive_The_Gulag
                 {
                     continue;
                 }
-                Console.WriteLine(yourHealth);
                 Console.ReadKey();
+                if (yourHealth > 0)
+                {
+                    Console.WriteLine("You throw a punch!");
+                    Console.ReadKey();
+                    int avoidChance = rnd.Next(1, 4);
+                    if (avoidChance == 1)
+                    {
+                        Console.WriteLine("Miss!");
+                    }
+                    else
+                    {
+                        int criticalChance1 = rnd.Next(1, 6);
+                        if (criticalChance1 == 1)
+                        {
+                            Console.WriteLine("Critical hit!");
+                            enemyHealth = enemyHealth - 10;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hit!");
+                            enemyHealth = enemyHealth - 5;
+                        }
+                    }
+                }
+                else
+                {
+                    continue;
+                }
             }
+            Console.ReadKey();
             if (yourHealth > 0)
             {
-                Console.WriteLine("You Win");
+                Console.WriteLine("You win! Your remaining health: " + yourHealth + "\n");
+                Console.ReadKey();
             }
-            else
-            {
-                Console.WriteLine("Game Over!");
-            }
-            SetHealth(yourHealth);
         }
     }
 }
