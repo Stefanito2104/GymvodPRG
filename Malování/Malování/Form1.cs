@@ -11,6 +11,11 @@ using System.Windows.Forms;
 
 namespace Malování
 {
+    //https://www.youtube.com/watch?v=nZfnQlU97s4&ab_channel=CodingwithLibino
+    //Promiň, že to je nakonec skoro celý okopírovaný, já totiž neveděl, co mám jak dělat.
+    //Snažil jsem se něco originálního vymyslet, ale vůbec jsem něvěděl, jak to tam napsat.
+    //Nakonec mi ani obdélníky nefungujou správně, fungují jen když se tahají doprava a dolů, jinak to celé zbělá.
+    //To vůbec netuším, čím to je. Doslova jsem vzal kód od elipsy a jen jsem přepsal Ellipse na Rectangle a už to nefunguje.
     public partial class Form1 : Form
     {
         public Form1()
@@ -30,7 +35,7 @@ namespace Malování
         int index;
         int x, y, x1, y1, xwidth, yheight;
         Color newClr;
-        ColorDialog cd = new ColorDialog();
+        ColorDialog colorPick = new ColorDialog();
         private void DrawBoard_MouseDown(object sender, MouseEventArgs e)
         {
             paint = true;
@@ -121,10 +126,11 @@ namespace Malování
 
         private void ColorChoose_Click(object sender, EventArgs e)
         {
-            cd.ShowDialog();
-            newClr = cd.Color;
-            DrawBoard.BackColor = cd.Color;
-            pen.Color = cd.Color;
+            if(colorPick.ShowDialog() == DialogResult.OK)
+            {
+                pen.Color = colorPick.Color;
+                newClr = colorPick.Color;
+            }
         }
 
         private void Save_Click(object sender, EventArgs e)
